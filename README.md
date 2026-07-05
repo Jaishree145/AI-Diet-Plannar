@@ -1,32 +1,14 @@
 # 🥗 AI Diet Planner
 
-An AI-powered application that generates personalized diet and meal plans based on a user's health goals, dietary preferences, allergies, and lifestyle. The system uses machine learning / LLM-based recommendations to suggest balanced meal plans, track nutrition, and adapt over time.
-
----
-
-## 📌 Features
-
-- 🧠 **AI-Generated Meal Plans** – Personalized daily/weekly diet plans based on user goals (weight loss, muscle gain, maintenance, etc.)
-- 🍎 **Nutrition Tracking** – Calorie, macro, and micronutrient breakdown for each meal
-- 🚫 **Allergy & Preference Filtering** – Supports vegetarian, vegan, keto, gluten-free, and custom restrictions
-- 📊 **Progress Dashboard** – Visualize calorie intake, weight trends, and adherence over time
-- 🔄 **Adaptive Recommendations** – Plans adjust based on user feedback and logged progress
-- 🔐 **User Authentication** – Secure sign-up/login for saving personalized plans
+A Spring Boot application that generates personalized diet and meal plans based on user health data, goals, and dietary preferences.
 
 ---
 
 ## 🏗️ Tech Stack
 
-| Layer          | Technology (example / customize as needed) |
-|----------------|----------------------------------------------|
-| Frontend       | React.js / Next.js                          |
-| Backend        | Node.js / Express or Python / FastAPI       |
-| AI/ML          | OpenAI API / Custom ML Model                |
-| Database       | MongoDB / PostgreSQL                        |
-| Auth           | JWT / OAuth2                                |
-| Deployment     | Docker, Vercel / AWS / Render               |
-
-> Update this table to match your actual stack.
+- **Java** (Spring Boot)
+- **Maven** (build tool)
+- **Spring Boot Starter Parent** v4.1.0
 
 ---
 
@@ -34,72 +16,90 @@ An AI-powered application that generates personalized diet and meal plans based 
 
 ```
 ai-diet-planner/
-├── client/                # Frontend application
-├── server/                # Backend API
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── utils/
-├── ai-engine/              # AI/ML logic for diet plan generation
-├── docs/                   # Documentation
-├── .env.example             # Environment variable template
-├── package.json
+├── src/
+│   ├── main/
+│   │   ├── java/com/aidietplanner/     # Application source code
+│   │   └── resources/                   # Configuration files (application.properties, etc.)
+│   └── test/
+│       └── java/ai_diet_planner/        # Test cases
+├── pom.xml                               # Maven project configuration
+├── mvnw / mvnw.cmd                       # Maven wrapper scripts
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Prerequisites
 
-### Prerequisites
-- Node.js (v18+) or Python (v3.10+)
-- npm / yarn / pip
-- MongoDB or PostgreSQL instance
-- API key for AI service (e.g., OpenAI)
+- Java JDK 17 or higher
+- Maven (or use the included Maven wrapper `mvnw`)
 
-### Steps
+---
+
+## 🚀 Running the Project Locally
+
+Clone the repository:
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/ai-diet-planner.git
-cd ai-diet-planner
+git clone https://github.com/Jaishree145/AI-Diet-Plannar.git
+cd AI-Diet-Plannar
+```
 
-# Install dependencies
-npm install
-# or for python backend
-pip install -r requirements.txt
+Run using the Maven wrapper:
 
-# Set up environment variables
-cp .env.example .env
-# then fill in your API keys and DB connection string
+```bash
+# On Windows
+mvnw.cmd spring-boot:run
 
-# Run the app
-npm run dev
+# On Mac/Linux
+./mvnw spring-boot:run
+```
+
+The application will start on the default Spring Boot port (usually `http://localhost:8080`).
+
+---
+
+## 🔧 Building the Project
+
+To build a runnable JAR file:
+
+```bash
+./mvnw clean package
+```
+
+The built JAR will be available in the `target/` folder. Run it with:
+
+```bash
+java -jar target/ai-diet-planner-0.0.1-SNAPSHOT.jar
 ```
 
 ---
 
-## 🔑 Environment Variables
+## 📌 Features (planned/in-progress)
 
-Create a `.env` file in the root directory with the following:
-
-```
-DATABASE_URL=your_database_connection_string
-AI_API_KEY=your_ai_service_api_key
-JWT_SECRET=your_jwt_secret
-PORT=5000
-```
+- [ ] Personalized diet plan generation based on user profile
+- [ ] Nutrition and calorie tracking
+- [ ] Allergy and dietary preference filtering
+- [ ] REST API endpoints for meal plan requests
 
 ---
 
-## 🚀 Usage
+## 🤝 Contributing
 
-1. Sign up / log in to your account
-2. Fill out your health profile (age, weight, height, activity level, goals, allergies)
-3. Click **Generate Plan** to receive an AI-curated diet plan
-4. Track your meals and progress on the dashboard
-5. Regenerate or fine-tune your plan anytime.
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add new feature"`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
 
 ---
 
-⭐ If you find this project useful, consider giving it a star on GitHub!
+## 📄 License
+
+This project currently has no license specified.
+
+---
+
+## 📧 Contact
+
+For questions or suggestions, open an issue on this repository.
